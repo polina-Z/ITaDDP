@@ -12,3 +12,39 @@
 + Просмотр товаров по категориям
 + Просмотр товаров в корзине
 + Оформление заказа
+
+## Схема сайта
+
+**Главная страница:**
+
+![Screenshot](/photo/main_page.jpg)
+
+
+
+**Всплывающий элемент корзины в header:**
+
+![Screenshot](/photo/cart_item.jpg)
+
+---
+
+**Страница со всеми категориями:**
+
+![Screenshot](/photo/shop_page.jpg)
+
+---
+
+**Страница с товарами определенной категории:**
+
+![Screenshot](/photo/category_page.jpg)
+
+---
+
+**Корзина:**
+
+![Screenshot](/photo/cart_page.jpg)
+
+---
+
+**Страница аутентификации:**
+
+![Screenshot](/photo/sign_in_page.jpg)
