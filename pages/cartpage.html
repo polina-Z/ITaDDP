@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="images/favicon.ico" />
+        <link rel="stylesheet" href="styles/main.css" type="text/css">
+        <link rel="stylesheet" href="" type="text/css" id="dark">
+        <title>Clothing Store</title>
+    </head>
+    <script>
+        function hideCart() {
+            element = document.getElementById("cart");
+            if (element.style.display === "none")
+            {
+                element.style.display = 'flex';
+            }  
+            else
+            {
+                element.style.display = 'none';
+            }   
+        }
+
+        function changeStyle() {
+            element = document.getElementById("dark");
+            butt = document.getElementById("cart-button");
+            if (element.getAttribute('href') != "styles/dark.css") 
+            {
+                element.setAttribute('href', "styles/dark.css");
+                butt.classList.add("inverted");
+            }
+            else 
+            {
+                element.setAttribute('href', " ");
+                butt.classList.remove("inverted");
+            }
+        }
+    </script>
+    <body>       
+        <header>
+            <div class="header">
+                <a href="index.html" class="logo-container"><img src="images/crown_light.svg" alt="Logo"></a>
+                <nav class="options">
+                    <label class="option switch">
+                        <input type="checkbox" onchange="changeStyle()">
+                        <span class="slider round"></span>
+                    </label>
+                    <a href="shoppage.html" class="option">SHOP</a>
+                    <a href="signinpage.html" class="option">SIGN IN</a>
+                    <div class="cart-icon" onclick="hideCart()">
+                        <img  class="shopping-icon" src="images/shopping-bag.svg" alt="Cart">
+                        <span class="item-count">1</span>
+                    </div>
+                </nav>
+             </div>
+
+            <div id="cart" class="cart-dropdown" style="display: none;">
+                <div class="cart-items">
+                    <div class="cart-item">
+                        <img src="https://i.ibb.co/ypkgK0X/blue-beanie.png" alr="image" class="cart-item-image">
+                        <div class="item-details">
+                            <span class="name">Blue Beanie</span>
+                            <span class="price">1 x $18</span>
+                        </div>
+                    </div>
+                </div>
+                <button id="cart-button" class="custom-button cart-dropdown-button" onclick="location.href='cartpage.html';">GO TO CART</button>
+            </div>
+        </header>
+
+        <main>
+            <div class='checkout-page'>
+                <div class='checkout-header'>
+                    <div class='header-block'>
+                        <span>Product</span>
+                    </div>    
+                    <div class='header-block'>
+                        <span>Description</span>
+                    </div>    
+                    <div class='header-block'>
+                        <span>Quantity</span>
+                    </div>    
+                    <div class='header-block'>
+                        <span>Price</span>
+                    </div>    
+                    <div class='header-block'>
+                        <span>Remove</span>
+                    </div>        
+                </div>
+
+                <div class='checkout-item'>
+                    <div class='image-container'>
+                        <img alt='item' src="https://i.ibb.co/ypkgK0X/blue-beanie.png" />
+                    </div>
+                    <span class='name'>Blue Beanie</span>
+                    <span class='quantity'>
+                        <div class='arrow'>&#10094;</div>
+                            <span class='value'>1</span>
+                        <div class='arrow'>&#10095;</div>
+                    </span>
+                    <span class='price'>18</span>
+                    <div class='remove-button'>&#10005;</div>
+                </div>
+                <button class="custom-button google-sign-in">Pay Now</button>
+            </div>
+        </main>
+        <footer>
+            <div class="footer">
+                <hr style="width: 96%;">
+                <div class="footer-content">
+                    <span class="text">&#169;Polina Zorko</span>
+                    <nav class="options">
+                        <a href="https://github.com/polina-Z"><img src="images/github.png" alt="github logo" class="link-icon"></a>
+                        <a href="https://t.me/Polina_zorko"><img src="images/telegram.png" alt="telegram logo" class="link-icon" style="margin-right: 45px;"></a>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
