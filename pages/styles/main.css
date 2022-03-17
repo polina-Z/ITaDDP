@@ -101,11 +101,13 @@
 
 
 .cart-item .item-details .name {
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: bolder;
 }
 
 .cart-item .item-details .price {
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: bolder;
   white-space: nowrap;
 }
 
@@ -546,7 +548,7 @@ input[type='password'] {
 }
 
 .checkout-page {
-  width: 55%;
+  width: 90%;
   min-height: 85vh;
   display: flex;
   flex-direction: column;
@@ -565,6 +567,11 @@ input[type='password'] {
 .checkout-header .header-block {
   text-transform: capitalize;
   width: 23%;
+}
+
+.header-block span{
+  font-size: larger;
+  font-weight: bolder;
 }
 
 .checkout-header .header-block:last-child {
@@ -586,6 +593,7 @@ input[type='password'] {
   width: 100%;
   display: flex;
   min-height: 100px;
+  max-height: 300px;
   border-bottom: 1px solid darkgrey;
   padding: 15px 0;
   font-size: 20px;
@@ -598,8 +606,10 @@ input[type='password'] {
 }
 
 .checkout-item img {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
+  max-height: 270px;
+  object-fit: cover;  
 }
 
 .checkout-item .name, .quantity, .price {
@@ -623,6 +633,10 @@ input[type='password'] {
   cursor: pointer;
 }
 
+
+.checkout-page .custom-button {
+  margin-bottom: 90px;
+}
 
 @media (orientation: portrait) and (max-width: 1000px) {
   .directory-menu .menu-item {
@@ -654,10 +668,38 @@ input[type='password'] {
     width: 90%;
     margin-bottom: 90px;
   }
+
+  .sign-in-and-sign-up {
+    font-weight: bolder;
+    font-size: 1.5em;
+  }
+
+  .form-input-label {
+    font-size: 1.2em;
+    top: -30px;
+  }
+
+  .form-input {
+    font-size: 1.5em;
+  }
 }
 
-@media (orientation: landscape) {
+@media (orientation: landscape) and (max-width: 1400px){
   .homepage .directory-menu {
     margin-bottom: 90px;
+  }
+
+  .sign-in-and-sign-up {
+    font-weight: bolder;
+    font-size: 1.5em;
+  }
+
+  .form-input-label {
+    font-size: 1.2em;
+    top: -30px;
+  }
+
+  .form-input {
+    font-size: 1.5em;
   }
 }
