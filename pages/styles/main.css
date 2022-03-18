@@ -1,3 +1,7 @@
+body {
+  font-size: 20px; 
+}
+
 /* HEADER */
 
 .header {
@@ -416,7 +420,7 @@ input:checked + .slider:before {
 }
 
 input[type='password'] {
-  letter-spacing: 0.3em;
+  letter-spacing: 0.3rem;
 }
 
 .form-input-label {
@@ -440,7 +444,7 @@ input[type='password'] {
 
 .collection-preview {
   display: flex;
-  width: 97%;
+  width: 94%;
   flex-direction: column;
   margin-bottom: 30px;
   margin-left: auto;
@@ -455,7 +459,9 @@ input[type='password'] {
 }
 
 .collection-preview .preview {
+  height: 95%;
   display: flex;
+  max-height: 400px;
   justify-content: space-between;
 }
 
@@ -463,7 +469,6 @@ input[type='password'] {
   width: 22vw;
   display: flex;
   flex-direction: column;
-  height: 350px;
   align-items: center;
   position: relative;
 }
@@ -493,7 +498,7 @@ input[type='password'] {
 }
 
 .collection-items .collection-footer {
-  width: 100%;
+  width: 90%;
   height: 5%;
   display: flex;
   justify-content: space-between;
@@ -671,16 +676,49 @@ input[type='password'] {
 
   .sign-in-and-sign-up {
     font-weight: bolder;
-    font-size: 1.5em;
+    font-size: 1.5rem;
   }
 
   .form-input-label {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     top: -30px;
   }
 
   .form-input {
-    font-size: 1.5em;
+    font-size: 1.5rem;
+  }
+
+  .options .option {
+    font-size: 30px;
+  }
+
+  .cart-icon .shopping-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .options .cart-icon {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .cart-icon .item-count {
+    font-size: 16px;
+    bottom: 10px;
+  }
+
+  .header .logo-container {
+    height: 100%;
+    width: 70px;
+    padding: 25px;
+  }
+  
+  .header {
+    height: 90px;
+  }
+
+  .collection-items .collection-footer {
+    font-size: larger;
   }
 }
 
@@ -691,15 +729,48 @@ input[type='password'] {
 
   .sign-in-and-sign-up {
     font-weight: bolder;
-    font-size: 1.5em;
+    font-size: 1.5rem;
   }
 
   .form-input-label {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     top: -30px;
   }
 
   .form-input {
-    font-size: 1.5em;
+    font-size: 1.5rem;
+  }
+
+  .options .option {
+    font-size: 25px;
+  }
+
+  .cart-icon .shopping-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .options .cart-icon {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .cart-icon .item-count {
+    font-size: 16px;
+    bottom: 10px;
+  }
+
+  .header .logo-container {
+    height: 100%;
+    width: 70px;
+    padding: 25px;
+  }
+  
+  .header {
+    height: 90px;
+  }
+
+  .collection-items .collection-footer {
+    font-size: larger;
   }
 }
