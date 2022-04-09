@@ -9,30 +9,25 @@
     </head>
     <script>
         function hideCart() {
+            let element;
             element = document.getElementById("cart");
-            if (element.style.display === "none")
-            {
-                element.style.display = 'flex';
-            }  
-            else
-            {
-                element.style.display = 'none';
-            }   
+            element.classList.toggle('hidden');  
         }
 
         function changeStyle() {
+            let element;
+            let butt;
             element = document.getElementById("dark");
             butt = document.getElementById("cart-button");
             if (element.getAttribute('href') != "styles/dark.css") 
             {
                 element.setAttribute('href', "styles/dark.css");
-                butt.classList.add("inverted");
             }
             else 
             {
                 element.setAttribute('href', " ");
-                butt.classList.remove("inverted");
             }
+            butt.classList.toggle("inverted");
         }
     </script>
     <body>       
@@ -53,7 +48,7 @@
                 </nav>
              </div>
 
-            <div id="cart" class="cart-dropdown" style="display: none;">
+            <div id="cart" class="cart-dropdown hidden">
                 <div class="cart-items">
                     <div class="cart-item">
                         <img src="https://i.ibb.co/ypkgK0X/blue-beanie.png" alr="image" class="cart-item-image">
@@ -125,16 +120,14 @@
             </div>
 
         </main>
-        <footer>
-            <div class="footer">
-                <hr style="width: 96%;">
-                <div class="footer-content">
-                    <span class="text">&#169;Polina Zorko</span>
-                    <nav class="options">
-                        <a href="https://github.com/polina-Z"><img src="images/github.png" alt="github logo" class="link-icon"></a>
-                        <a href="https://t.me/Polina_zorko"><img src="images/telegram.png" alt="telegram logo" class="link-icon" style="margin-right: 45px;"></a>
-                    </nav>
-                </div>
+        <footer class="footer">
+            <hr class="separator">
+            <div class="footer-content">
+                <span class="text">&#169;Polina Zorko</span>
+                <nav class="options">
+                    <a href="https://github.com/polina-Z"><img src="images/github.png" alt="github logo" class="link-icon"></a>
+                    <a href="https://t.me/Polina_zorko"><img src="images/telegram.png" alt="telegram logo" class="link-icon second-link"></a>
+                </nav>
             </div>
         </footer>
     </body>

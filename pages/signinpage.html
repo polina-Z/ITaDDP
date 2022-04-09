@@ -9,30 +9,25 @@
     </head>
     <script>
         function hideCart() {
+            let element;
             element = document.getElementById("cart");
-            if (element.style.display === "none")
-            {
-                element.style.display = 'flex';
-            }  
-            else
-            {
-                element.style.display = 'none';
-            }   
+            element.classList.toggle('hidden');  
         }
 
         function changeStyle() {
+            let element;
+            let butt;
             element = document.getElementById("dark");
             butt = document.getElementById("cart-button");
             if (element.getAttribute('href') != "styles/dark.css") 
             {
                 element.setAttribute('href', "styles/dark.css");
-                butt.classList.add("inverted");
             }
             else 
             {
                 element.setAttribute('href', " ");
-                butt.classList.remove("inverted");
             }
+            butt.classList.toggle("inverted");
         }
     </script>
     <body>       
@@ -45,15 +40,15 @@
                         <span class="slider round"></span>
                     </label>
                     <a href="shoppage.html" class="option">SHOP</a>
-                    <a href="signinpage.html" class="option">SIGN IN</a>
-                    <div class="cart-icon" onclick="hideCart()">
+                    <a href="signinpage.html" class="option active-link">SIGN IN</a>
+                    <button class="cart-icon" onclick="hideCart()">
                         <img  class="shopping-icon" src="images/shopping-bag.svg" alt="Cart">
                         <span class="item-count">1</span>
-                    </div>
+                    </button>
                 </nav>
              </div>
 
-            <div id="cart" class="cart-dropdown" style="display: none;">
+            <div id="cart" class="cart-dropdown hidden">
                 <div class="cart-items">
                     <div class="cart-item">
                         <img src="https://i.ibb.co/ypkgK0X/blue-beanie.png" alr="image" class="cart-item-image">
@@ -63,7 +58,7 @@
                         </div>
                     </div>
                 </div>
-                <button id="cart-button" class="custom-button cart-dropdown-button" onclick="location.href='cartpage.html';">GO TO CART</button>
+                <a id="cart-button" class="custom-button cart-dropdown-button" href="cartpage.html">GO TO CART</a>
             </div>
         </header>
 
@@ -75,8 +70,9 @@
             
                     <form>
                         <div class="group">
-                            <label class="form-input-label">Email</label>
+                            <label class="form-input-label" for='email-input-sign-in'>Email</label>
                             <input 
+                                id="email-input-sign-in"
                                 class="form-input" 
                                 name='email'
                                 type='email'
@@ -84,8 +80,9 @@
 
                         </div>
                         <div class="group">
-                            <label class="form-input-label">Password</label>
+                            <label class="form-input-label" for='password-input-sign-in'>Password</label>
                             <input 
+                                id="password-input-sign-in"
                                 class="form-input" 
                                 name='password'
                                 type='password'
@@ -104,8 +101,9 @@
                     <span>Sign up with your email and password</span>
                     <form class='sign-up-form'>
                         <div class="group">
-                            <label class="form-input-label">Display Name</label>
+                            <label class="form-input-label" for='name-input-sign-up'>Display Name</label>
                             <input 
+                                id="name-input-sign-up"
                                 class="form-input" 
                                 name='displayName'
                                 type='text'
@@ -114,8 +112,9 @@
                         </div>
 
                         <div class="group">
-                            <label class="form-input-label">Email</label>
+                            <label class="form-input-label" for='email-input-sign-up'>Email</label>
                             <input 
+                                id="email-input-sign-up"
                                 class="form-input" 
                                 name='email'
                                 type='email'
@@ -123,8 +122,9 @@
 
                         </div>
                         <div class="group">
-                            <label class="form-input-label">Password</label>
+                            <label class="form-input-label" for='password-input-sign-up'>Password</label>
                             <input 
+                                id="password-input-sign-up"
                                 class="form-input" 
                                 name='passwors'
                                 type='password'
@@ -132,8 +132,9 @@
 
                         </div>
                         <div class="group">
-                            <label class="form-input-label">Confirm Password</label>
+                            <label class="form-input-label" for='confirm-password-sign-up'>Confirm Password</label>
                             <input 
+                                id="confirm-password-sign-up"
                                 class="form-input" 
                                 name='confirmPassword'
                                 type='password'
@@ -145,16 +146,14 @@
                   </div>
             </div>
         </main>
-        <footer>
-            <div class="footer">
-                <hr style="width: 96%;">
-                <div class="footer-content">
-                    <span class="text">&#169;Polina Zorko</span>
-                    <nav class="options">
-                        <a href="https://github.com/polina-Z"><img src="images/github.png" alt="github logo" class="link-icon"></a>
-                        <a href="https://t.me/Polina_zorko"><img src="images/telegram.png" alt="telegram logo" class="link-icon" style="margin-right: 45px;"></a>
-                    </nav>
-                </div>
+        <footer class="footer">
+            <hr class="separator">
+            <div class="footer-content">
+                <span class="text">&#169;Polina Zorko</span>
+                <nav class="options">
+                    <a href="https://github.com/polina-Z"><img src="images/github.png" alt="github logo" class="link-icon"></a>
+                    <a href="https://t.me/Polina_zorko"><img src="images/telegram.png" alt="telegram logo" class="link-icon second-link"></a>
+                </nav>
             </div>
         </footer>
     </body>
