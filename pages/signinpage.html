@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="images/favicon.ico" />
+        <link rel="stylesheet" href="styles/main.css" type="text/css">
+        <link rel="stylesheet" href="" type="text/css" id="dark">
+        <title>Clothing Store</title>
+    </head>
+    <script>
+        function hideCart() {
+            let element;
+            element = document.getElementById("cart");
+            element.classList.toggle('hidden');  
+        }
+
+        function changeStyle() {
+            let element;
+            let butt;
+            element = document.getElementById("dark");
+            butt = document.getElementById("cart-button");
+            if (element.getAttribute('href') != "styles/dark.css") 
+            {
+                element.setAttribute('href', "styles/dark.css");
+            }
+            else 
+            {
+                element.setAttribute('href', " ");
+            }
+            butt.classList.toggle("inverted");
+        }
+    </script>
+    <body>       
+        <header>
+            <div class="header">
+                <a href="index.html" class="logo-container"><img src="images/crown_light.svg" alt="Logo"></a>
+                <nav class="options">
+                    <label class="option switch">
+                        <input type="checkbox" onchange="changeStyle()">
+                        <span class="slider round"></span>
+                    </label>
+                    <a href="shoppage.html" class="option">SHOP</a>
+                    <a href="signinpage.html" class="option active-link">SIGN IN</a>
+                    <button class="cart-icon" onclick="hideCart()">
+                        <img  class="shopping-icon" src="images/shopping-bag.svg" alt="Cart">
+                        <span class="item-count">1</span>
+                    </button>
+                </nav>
+             </div>
+
+            <div id="cart" class="cart-dropdown hidden">
+                <div class="cart-items">
+                    <div class="cart-item">
+                        <img src="https://i.ibb.co/ypkgK0X/blue-beanie.png" alr="image" class="cart-item-image">
+                        <div class="item-details">
+                            <span class="name">Blue Beanie</span>
+                            <span class="price">1 x $18</span>
+                        </div>
+                    </div>
+                </div>
+                <a id="cart-button" class="custom-button cart-dropdown-button" href="cartpage.html">GO TO CART</a>
+            </div>
+        </header>
+
+        <main>
+            <div class="sign-in-and-sign-up">
+                <div class='sign-in'>
+                    <h2>I already have an account</h2>
+                    <span>Sign in with your email and password</span>
+            
+                    <form>
+                        <div class="group">
+                            <label class="form-input-label" for='email-input-sign-in'>Email</label>
+                            <input 
+                                id="email-input-sign-in"
+                                class="form-input" 
+                                name='email'
+                                type='email'
+                                required />
+
+                        </div>
+                        <div class="group">
+                            <label class="form-input-label" for='password-input-sign-in'>Password</label>
+                            <input 
+                                id="password-input-sign-in"
+                                class="form-input" 
+                                name='password'
+                                type='password'
+                                required />
+
+                        </div>
+                        <div class="buttons">
+                            <button type="submit" class="custom-button">SIGN IN</button>
+                            <button type="button" class="custom-button google-sign-in">SIGN IN WITH GOOGLE</button>
+                        </div>
+                    </form>
+                  </div>
+
+                  <div class='sign-up'>
+                    <h2 class='title'>I do not have an account</h2>
+                    <span>Sign up with your email and password</span>
+                    <form class='sign-up-form'>
+                        <div class="group">
+                            <label class="form-input-label" for='name-input-sign-up'>Display Name</label>
+                            <input 
+                                id="name-input-sign-up"
+                                class="form-input" 
+                                name='displayName'
+                                type='text'
+                                required />
+
+                        </div>
+
+                        <div class="group">
+                            <label class="form-input-label" for='email-input-sign-up'>Email</label>
+                            <input 
+                                id="email-input-sign-up"
+                                class="form-input" 
+                                name='email'
+                                type='email'
+                                required />
+
+                        </div>
+                        <div class="group">
+                            <label class="form-input-label" for='password-input-sign-up'>Password</label>
+                            <input 
+                                id="password-input-sign-up"
+                                class="form-input" 
+                                name='passwors'
+                                type='password'
+                                required />
+
+                        </div>
+                        <div class="group">
+                            <label class="form-input-label" for='confirm-password-sign-up'>Confirm Password</label>
+                            <input 
+                                id="confirm-password-sign-up"
+                                class="form-input" 
+                                name='confirmPassword'
+                                type='password'
+                                required />
+
+                        </div>
+                        <button type="submit" class="custom-button">SIGN UP</button>
+                    </form>
+                  </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <hr class="separator">
+            <div class="footer-content">
+                <span class="text">&#169;Polina Zorko</span>
+                <nav class="options">
+                    <a href="https://github.com/polina-Z"><img src="images/github.png" alt="github logo" class="link-icon"></a>
+                    <a href="https://t.me/Polina_zorko"><img src="images/telegram.png" alt="telegram logo" class="link-icon second-link"></a>
+                </nav>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="images/favicon.ico" />
+        <link rel="stylesheet" href="styles/main.css" type="text/css">
+        <link rel="stylesheet" href="" type="text/css" id="dark">
+        <title>Clothing Store</title>
+    </head>
+    <script>
+        function hideCart() {
+            let element;
+            element = document.getElementById("cart");
+            element.classList.toggle('hidden');  
+        }
+
+        function changeStyle() {
+            let element;
+            let butt;
+            element = document.getElementById("dark");
+            butt = document.getElementById("cart-button");
+            if (element.getAttribute('href') != "styles/dark.css") 
+            {
+                element.setAttribute('href', "styles/dark.css");
+            }
+            else 
+            {
+                element.setAttribute('href', " ");
+            }
+            butt.classList.toggle("inverted");
+        }
+    </script>
+    <body>       
+        <header>
+            <div class="header">
+                <a href="index.html" class="logo-container"><img src="images/crown_light.svg" alt="Logo"></a>
+                <nav class="options">
+                    <label class="option switch">
+                        <input type="checkbox" onchange="changeStyle()">
+                        <span class="slider round"></span>
+                    </label>
+                    <a href="shoppage.html" class="option active-link">SHOP</a>
+                    <a href="signinpage.html" class="option">SIGN IN</a>
+                    <button class="cart-icon" onclick="hideCart()">
+                        <img  class="shopping-icon" src="images/shopping-bag.svg" alt="Cart">
+                        <span class="item-count">1</span>
+                    </button>
+                </nav>
+             </div>
+
+            <div id="cart" class="cart-dropdown hidden">
+                <div class="cart-items">
+                    <div class="cart-item">
+                        <img src="https://i.ibb.co/ypkgK0X/blue-beanie.png" alr="image" class="cart-item-image">
+                        <div class="item-details">
+                            <span class="name">Blue Beanie</span>
+                            <span class="price">1 x $18</span>
+                        </div>
+                    </div>
+                </div>
+                <a id="cart-button" class="custom-button cart-dropdown-button" href="cartpage.html">GO TO CART</a>
+            </div>
+        </header>
+
+        <main>
+            <div class='collections-overview'>
+                <div class='collection-preview'>
+                    <a class='clothes-title'>SNEAKERS</a>
+                    <div class='preview'>
+                        <div class='collection-items'>
+                            <figure class='collection-item'>
+                                <img class="image" src="https://i.ibb.co/0s3pdnc/adidas-nmd.png" alt="Adidas NMD">
+                                <figcaption class='collection-footer'>
+                                    <span class='name'>Adidas NMD</span>
+                                    <span class='price'>220</span>
+                                </figcaption>
+                            </figure>
+                            <button class="custom-button inverted">ADD TO CART</button>
+                        </div>
+                        <div class='collection-items'>
+                            <figure class='collection-item'>
+                                <img class="image" src="https://i.ibb.co/bPmVXyP/black-converse.png" alt="Converse">
+                                <figcaption class='collection-footer'>
+                                    <span class='name'>Converse</span>
+                                    <span class='price'>110</span>
+                                </figcaption>
+                            </figure>
+                            <button class="custom-button inverted">ADD TO CART</button>
+                        </div>
+                        <div class='collection-items'>
+                            <figure class='collection-item'>
+                                <img class="image" src="https://i.ibb.co/dJbG1cT/yeezy.png" alt="Adidas Yeezy">
+                                <figcaption class='collection-footer'>
+                                    <span class='name'>Adidas Yeezy</span>
+                                    <span class='price'>280</span>
+                                </figcaption>
+                            </figure>
+                            <button class="custom-button inverted">ADD TO CART</button>
+                        </div>
+                        <div class='collection-items'>
+                            <figure class='collection-item'>
+                                <img class="image" src="https://i.ibb.co/1RcFPk0/white-nike-high-tops.png" alt="Nike White AirForce">
+                                <figcaption class='collection-footer'>
+                                    <span class='name'>Nike White AirForce</span>
+                                    <span class='price'>160</span>
+                                </figcaption>
+                            </figure>
+                            <button class="custom-button inverted">ADD TO CART</button>
+                        </div>
+                    </div>  
+                </div>
+
+                <div class='collection-preview'>
+                    <a class='clothes-title'>WOMENS</a>
+                    <div class='preview'>
+                        <div class='collection-items'>
+                            <figure class='collection-item'>
+                                <img class="image" src="https://i.ibb.co/7CQVJNm/blue-tank.png" alt="Blue Tanktop">
+                                <figcaption class='collection-footer'>
+                                    <span class='name'>Blue Tanktop</span>
+                                    <span class='price'>25</span>
+                                </figcaption>
+                            </figure>
+                            <button class="custom-button inverted">ADD TO CART</button>
+                        </div>
+                        <div class='collection-items'>
+                            <figure class='collection-item'>
+                                <img class="image" src="https://i.ibb.co/4W2DGKm/floral-blouse.png" alt="Floral Blouse">
+                                <figcaption class='collection-footer'>
+                                    <span class='name'>Floral Blouse</span>
+                                    <span class='price'>20</span>
+                                </figcaption>
+                            </figure>
+                            <button class="custom-button inverted">ADD TO CART</button>
+                        </div>
+                        <div class='collection-items'>
+                            <figure class='collection-item'>
+                                <img class="image" src="https://i.ibb.co/KV18Ysr/floral-skirt.png" alt="Floral Dress">
+                                <figcaption class='collection-footer'>
+                                    <span class='name'>Floral Dress</span>
+                                    <span class='price'>80</span>
+                                </figcaption>
+                            </figure>
+                            <button class="custom-button inverted">ADD TO CART</button>
+                        </div>
+                        <div class='collection-items'>
+                            <figure class='collection-item'>
+                                <img class="image" src="https://i.ibb.co/N3BN1bh/red-polka-dot-dress.png" alt="Red Dots Dress">
+                                <figcaption class='collection-footer'>
+                                    <span class='name'>Red Dots Dress</span>
+                                    <span class='price'>80</span>
+                                </figcaption>
+                            </figure>
+                            <button class="custom-button inverted">ADD TO CART</button>
+                        </div>
+                    </div>  
+                </div>
+
+                <div class='collection-preview'>
+                    <a class='clothes-title'>JACKETS</a>
+                    <div class='preview'>
+                        <div class='collection-items'>
+                            <figure class='collection-item'>
+                                <img class="image" src="https://i.ibb.co/XzcwL5s/black-shearling.png" alt="Black Jean Shearling">
+                                <figcaption class='collection-footer'>
+                                    <span class='name'>Black Jean Shearling</span>
+                                    <span class='price'>125</span>
+                                </figcaption>
+                            </figure>
+                            <button class="custom-button inverted">ADD TO CART</button>
+                        </div>
+                        <div class='collection-items'>
+                            <figure class='collection-item'>
+                                <img class="image" src="https://i.ibb.co/mJS6vz0/blue-jean-jacket.png" alt="Blue Jean Jacket">
+                                <figcaption class='collection-footer'>
+                                    <span class='name'>Blue Jean Jacket</span>
+                                    <span class='price'>90</span>
+                                </figcaption>
+                            </figure>
+                            <button class="custom-button inverted">ADD TO CART</button>
+                        </div>
+                        <div class='collection-items'>
+                            <figure class='collection-item'>
+                                <img class="image" src="https://i.ibb.co/N71k1ML/grey-jean-jacket.png" alt="Grey Jean Jacket">
+                                <figcaption class='collection-footer'>
+                                    <span class='name'>Grey Jean Jacket</span>
+                                    <span class='price'>90</span>
+                                </figcaption>
+                            </figure>
+                            <button class="custom-button inverted">ADD TO CART</button>
+                        </div>
+                        <div class='collection-items'>
+                            <figure class='collection-item'>
+                                <img class="image" src="https://i.ibb.co/s96FpdP/brown-shearling.png" alt="Brown Shearling">
+                                <figcaption class='collection-footer'>
+                                    <span class='name'>Brown Shearling</span>
+                                    <span class='price'>165</span>
+                                </figcaption>
+                            </figure>
+                            <button class="custom-button inverted">ADD TO CART</button>
+                        </div>
+                    </div>  
+                </div>
+
+                <div class='collection-preview'>
+                    <a class='clothes-title'>MENS</a>
+                    <div class='preview'>
+                        <div class='collection-items'>
+                            <figure class='collection-item'>
+                                <img class="image" src="https://i.ibb.co/xJS0T3Y/camo-vest.png" alt="Camo Down Vest">
+                                <figcaption class='collection-footer'>
+                                    <span class='name'>Camo Down Vest</span>
+                                    <span class='price'>325</span>
+                                </figcaption>
+                            </figure>
+                            <button class="custom-button inverted">ADD TO CART</button>
+                        </div>
+                        <div class='collection-items'>
+                            <figure class='collection-item'>
+                                <img class="image" src="https://i.ibb.co/qMQ75QZ/floral-shirt.png" alt="Floral T-shirt">
+                                <figcaption class='collection-footer'>
+                                    <span class='name'>Floral T-shirt</span>
+                                    <span class='price'>20</span>
+                                </figcaption>
+                            </figure>
+                            <button class="custom-button inverted">ADD TO CART</button>
+                        </div>
+                        <div class='collection-items'>
+                            <figure class='collection-item'>
+                                <img class="image" src="https://i.ibb.co/55z32tw/long-sleeve.png" alt="Black & White Longsleeve">
+                                <figcaption class='collection-footer'>
+                                    <span class='name'>Black & White Longsleeve</span>
+                                    <span class='price'>25</span>
+                                </figcaption>
+                            </figure>
+                            <button class="custom-button inverted">ADD TO CART</button>
+                        </div>
+                        <div class='collection-items'>
+                            <figure class='collection-item'>
+                                <img class="image" src="https://i.ibb.co/RvwnBL8/pink-shirt.png" alt="Pink T-shirt">
+                                <figcaption class='collection-footer'>
+                                    <span class='name'>Pink T-shirt</span>
+                                    <span class='price'>25</span>
+                                </figcaption>
+                            </figure>
+                            <button class="custom-button inverted">ADD TO CART</button>
+                        </div>
+                    </div>  
+                </div>
+
+                <div class='collection-preview'>
+                    <a class='clothes-title'>HATS</a>
+                    <div class='preview'>
+                        <div class='collection-items'>
+                            <figure class='collection-item'>
+                                <img class="image" src="https://i.ibb.co/ZYW3VTp/brown-brim.png" alt="Brown Brim">
+                                <figcaption class='collection-footer'>
+                                    <span class='name'>Brown Brim</span>
+                                    <span class='price'>25</span>
+                                </figcaption>
+                            </figure>
+                            <button class="custom-button inverted">ADD TO CART</button>
+                        </div>
+                        <div class='collection-items'>
+                            <figure class='collection-item'>
+                                <img class="image" src="https://i.ibb.co/ypkgK0X/blue-beanie.png" alt="Blue Beanie">
+                                <figcaption class='collection-footer'>
+                                    <span class='name'>Blue Beanie</span>
+                                    <span class='price'>18</span>
+                                </figcaption>
+                            </figure>
+                            <button class="custom-button inverted">ADD TO CART</button>
+                        </div>
+                        <div class='collection-items'>
+                            <figure class='collection-item'>
+                                <img class="image" src="https://i.ibb.co/QdJwgmp/brown-cowboy.png" alt="Brown Cowboy">
+                                <figcaption class='collection-footer'>
+                                    <span class='name'>Brown Cowboy</span>
+                                    <span class='price'>35</span>
+                                </figcaption>
+                            </figure>
+                            <button class="custom-button inverted">ADD TO CART</button>
+                        </div>
+                        <div class='collection-items'>
+                            <figure class='collection-item'>
+                                <img class="image" src="https://i.ibb.co/RjBLWxB/grey-brim.png" alt="Grey Brim">
+                                <figcaption class='collection-footer'>
+                                    <span class='name'>Grey Brim</span>
+                                    <span class='price'>25</span>
+                                </figcaption>
+                            </figure>
+                            <button class="custom-button inverted">ADD TO CART</button>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <hr class="separator">
+            <div class="footer-content">
+                <span class="text">&#169;Polina Zorko</span>
+                <nav class="options">
+                    <a href="https://github.com/polina-Z"><img src="images/github.png" alt="github logo" class="link-icon"></a>
+                    <a href="https://t.me/Polina_zorko"><img src="images/telegram.png" alt="telegram logo" class="link-icon second-link"></a>
+                </nav>
+            </div>
+        </footer>
+    </body>
+</html>

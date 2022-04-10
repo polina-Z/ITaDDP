@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="images/favicon.ico" />
+        <link rel="stylesheet" href="styles/main.css" type="text/css">
+        <link rel="stylesheet" href="" type="text/css" id="dark">
+        <title>Clothing Store</title>
+    </head>
+    <script>
+        function hideCart() {
+            let element;
+            element = document.getElementById("cart");
+            element.classList.toggle('hidden');  
+            // console.log(element.classList.contains())
+        }
+
+        function changeStyle() {
+            let element;
+            let butt;
+            element = document.getElementById("dark");
+            butt = document.getElementById("cart-button");
+            if (element.getAttribute('href') != "styles/dark.css") 
+            {
+                element.setAttribute('href', "styles/dark.css");
+                butt.classList.add("inverted");
+            }
+            else 
+            {
+                element.setAttribute('href', " ");
+                butt.classList.remove("inverted");
+            }
+        }
+    </script>
+    <body>       
+        <header>
+            <div class="header">
+                <a href="index.html" class="logo-container"><img src="images/crown_light.svg" alt="Logo"></a>
+                <nav class="options">
+                    <label class="option switch">
+                        <input type="checkbox" onchange="changeStyle()">
+                        <span class="slider round"></span>
+                    </label>
+                    <a href="shoppage.html" class="option">SHOP</a>
+                    <a href="signinpage.html" class="option">SIGN IN</a>
+                    <button class="cart-icon" onclick="hideCart()">
+                        <img  class="shopping-icon" src="images/shopping-bag.svg" alt="Cart">
+                        <span class="item-count">1</span>
+                    </button>
+                </nav>
+             </div>
+
+            <div id="cart" class="cart-dropdown hidden">
+                <div class="cart-items">
+                    <div class="cart-item">
+                        <img src="https://i.ibb.co/ypkgK0X/blue-beanie.png" alr="image" class="cart-item-image">
+                        <div class="item-details">
+                            <span class="name">Blue Beanie</span>
+                            <span class="price">1 x $18</span>
+                        </div>
+                    </div>
+                </div>
+                <a id="cart-button" class="custom-button cart-dropdown-button" href="cartpage.html">GO TO CART</a>
+            </div>
+        </header>
+
+        <main>
+            <div class="homepage">
+                <div class="directory-menu">
+                    <div class="menu-item">
+                        <div class="background-image" style="background-image: url(images/hats.png);"></div>
+                        <div class='content'>
+                            <h2 class="title">HATS</h2>
+                            <span class='subtitle'>SHOP NOW</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="background-image" style="background-image: url(images/jackets.png);"></div>
+                        <a href="categorypage.html">
+                            <div class='content'>
+                                <h2 class="title">JACKETS</h2>
+                                <span class='subtitle'>SHOP NOW</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="background-image" style="background-image: url(images/sneakers.png);"></div>
+                        <div class='content'>
+                            <h2 class="title">SNEAKERS</h2>
+                            <span class='subtitle'>SHOP NOW</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item large">
+                        <div class="background-image" style="background-image: url(images/womens.png);"></div>
+                        <div class='content'>
+                            <h2 class="title">WOMENS</h2>
+                            <span class='subtitle'>SHOP NOW</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item large">
+                        <div class="background-image" style="background-image: url(images/mens.jpg);"></div>
+                        <div class='content'>
+                            <h2 class="title">MENS</h2>
+                            <span class='subtitle'>SHOP NOW</span>
+                        </div>
+                    </div>
+                </div>
+            </div>           
+        </main>
+        <footer class="footer">
+            <hr class="separator">
+            <div class="footer-content">
+                <span class="text">&#169;Polina Zorko</span>
+                <nav class="options">
+                    <a href="https://github.com/polina-Z"><img src="images/github.png" alt="github logo" class="link-icon"></a>
+                    <a href="https://t.me/Polina_zorko"><img src="images/telegram.png" alt="telegram logo" class="link-icon second-link"></a>
+                </nav>
+            </div>
+        </footer>
+    </body>
+</html>

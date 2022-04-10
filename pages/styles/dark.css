@@ -1,0 +1,80 @@
+body {
+    background-color: #17181a;
+}
+
+.separator {
+    border: 1px solid #7d8282;
+}
+
+.header a {
+    color: white;
+}
+
+.shopping-icon {
+    filter: invert(1);
+}
+
+.cart-icon .item-count {
+    color: white;
+}
+
+.directory-menu .menu-item {
+    border-color: #7d8282;
+}
+
+.text {
+    color: #7d8282;
+}
+
+.cart-dropdown {
+    border-color: white;
+    background-color: #17181a;
+}
+
+.cart-item .item-details {
+    color: white;
+}
+
+.form-input {
+    background: none;
+    background-color: #17181a;
+    color: #7d8282;
+    border-bottom: 1px solid #7d8282;
+}
+
+.form-input:focus ~ .form-input-label {
+    color: white;
+}
+
+.sign-in-and-sign-up .custom-button {
+    border: 1px solid grey;
+}
+
+h2 {
+    color: white;
+}
+
+
+.sign-in-and-sign-up span {
+    color: grey;
+}
+
+.clothes-title {
+    color: white;
+}
+
+.collection-footer .name, .price {
+    color: white
+}
+
+.checkout-header span {
+    color: #c0c4cc;
+}
+
+.checkout-item span {
+    color: #c0c4cc;
+}
+
+.remove-button {
+    color: #c0c4cc;
+}
