@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="static/images/favicon.ico" />
+        <link rel="stylesheet" href="static/styles/main.css" type="text/css">
+        <link rel="stylesheet" type="text/css" id="dark">
+        <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+
+        <script type="module" src="static/js/firebase/firebase.init.js"></script>
+        <script type="text/javascript" src="static/js/utils.js"></script>
+        <title>Clothing Store</title>
+    </head>
+
+    <body>     
+        <header>
+            <div class="header">
+                <a href="/" class="logo-container" data-link><img src="static/images/crown_light.svg" alt="Logo"></a>
+                <nav class="options">
+                    <label class="option switch">
+                        <input id="checkbox" type="checkbox" onchange="themeChange()">
+                        <span class="slider round"></span>
+                    </label>
+                    <a href="/shop" class="option" data-link>SHOP</a>
+                    <a id="sign-link" class="option" data-link></a>
+                    <script>
+                        let a_element = document.getElementById("sign-link");
+                        if(localStorage.getItem("user") === 'null')
+                        {
+                            a_element.setAttribute("href", "/sign-in");
+                            a_element.textContent = "SIGN IN";
+                        }
+                        else 
+                        {
+                            a_element.setAttribute("href", "/sign-out");
+                            a_element.textContent = "SIGN OUT";
+                        };
+                    </script>
+                    <button class="cart-icon" onclick="hideCart()">
+                        <img  class="shopping-icon" src="static/images/shopping-bag.svg" alt="Cart">
+                        <span id="cart-count" class="item-count"></span>
+                    </button>
+                </nav>
+             </div>
+
+            <div id="cart" class="cart-dropdown hidden">
+                <div id="cart-items" class="cart-items">   
+                </div>
+                <a id="cart-button" class="custom-button cart-dropdown-button" href="/cart" data-link>GO TO CART</a>
+            </div>
+        </header>
+
+        <main id="app">
+            <div class="loadding-block">
+                <h2 class="section-loading">
+                    Loading...
+                </h2>
+            </div>
+            <script type="module" src="/static/js/index.js"></script>
+        </main>
+
+        <footer class="footer">
+            <hr class="separator">
+            <div class="footer-content">
+                <span class="text">&#169;Polina Zorko</span>
+                <nav class="options">
+                    <a href="https://github.com/polina-Z"><img src="static/images/github.png" alt="github logo" class="link-icon"></a>
+                    <a href="https://t.me/Polina_zorko"><img src="static/images/telegram.png" alt="telegram logo" class="link-icon second-link"></a>
+                </nav>
+            </div>
+        </footer>
+    </body>
+</html>

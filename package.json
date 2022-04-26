@@ -1,0 +1,25 @@
+{
+  "name": "itaddp",
+  "version": "1.0.0",
+  "description": "## Интернет магазин",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polina-Z/ITaDDP.git"
+  },
+  "author": "Polina Zorko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/polina-Z/ITaDDP/issues"
+  },
+  "homepage": "https://github.com/polina-Z/ITaDDP#readme",
+  "keywords": [],
+  "dependencies": {
+    "express": "^4.17.3",
+    "firebase": "^9.6.10",
+    "firebase-tools": "^10.6.0"
+  }
+}
