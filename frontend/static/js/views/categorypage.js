@@ -1,8 +1,9 @@
 import AbstractView from "./abstractview.js";
+import { fetchCollection } from "../firebase/firebase.utils.js";
 
 function capitalizeFirstLetter(string) {
     return string.charAt(1).toUpperCase() + string.slice(2);
-}
+};
 
 export default class CategoryPage extends AbstractView {
     constructor(params) {
