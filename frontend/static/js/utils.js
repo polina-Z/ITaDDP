@@ -1,11 +1,12 @@
 function themeChange() {
     const link_black_style = document.getElementById("dark");
     const custom_button = document.getElementById("cart-button");
-    if (localStorage.getItem('mode') === "light") 
+    if (localStorage.getItem('mode') === "light" || localStorage.getItem('mode') === null) 
     {
         link_black_style.setAttribute('href', "static/styles/dark.css");
         custom_button.classList.add("inverted");
         localStorage.setItem('mode', 'dark');
+        document.getElementById("checkbox").setAttribute("checked", "checked");
     }
     else 
     {
