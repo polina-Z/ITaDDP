@@ -18,7 +18,7 @@ jobs:
         run: npm ci
 
       - name: Run Checks
-        run: npx eslint frontend/** --ext .js -c .eslintrc.json
+        run: npx eslint frontend/static/js/** --ext .js -c .eslintrc.json
 
   deploy:
     name: Deploy Website to Github Pages
