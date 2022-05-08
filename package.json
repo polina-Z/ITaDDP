@@ -20,11 +20,17 @@
   "homepage": "https://github.com/polina-Z/ITaDDP#readme",
   "keywords": [],
   "dependencies": {
+    "eslint": "^8.15.0",
     "express": "^4.17.3",
     "firebase": "^9.6.10",
     "firebase-tools": "^10.6.0"
   },
   "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.0",
+    "eslint-plugin-promise": "^6.0.0",
     "gh-pages": "^3.2.3"
   }
 }
