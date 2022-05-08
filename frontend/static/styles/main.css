@@ -2,6 +2,11 @@ body {
   font-size: 20px; 
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 /* HEADER */
 
 .header {
@@ -15,7 +20,6 @@ body {
 .header a {
   text-decoration: none;
   color: black;
-  transition: 2s;
 }
 
 .header a.active-link {
@@ -23,6 +27,7 @@ body {
 }
 
 .header a:hover {
+  transition: 2s;
   transform: scale(1.2);
 }
 
@@ -214,6 +219,7 @@ body {
   background-color: white;
   opacity: 0.7;
   position: absolute;
+  min-width: 100px;
 }
 
 .content .title {
@@ -230,6 +236,7 @@ body {
 
 .menu-item.large {
   height: 380px;
+  order: 1;
 }
 
 
@@ -503,6 +510,7 @@ input[type='password'] {
   flex-direction: column;
   align-items: center;
   position: relative;
+  max-height: 500px;
 }
 
 .collection-items .image {
@@ -510,6 +518,13 @@ input[type='password'] {
   height: 95%;
   object-fit: cover;
   margin-bottom: 5px;
+}
+
+
+.total {
+  margin-top: 30px;
+  margin-left: auto;
+  font-size: 36px;
 }
 
 .collection-items .custom-button {
@@ -680,6 +695,12 @@ input[type='password'] {
   
 }
 
+.form-input-error{
+  font-size: 1.2rem;
+  color: red;
+  margin: 10px 0px 10px 0px;
+}
+
 .checkout-page .custom-button {
   margin-bottom: 90px;
 }
@@ -724,6 +745,7 @@ input[type='password'] {
     font-size: 1.2rem;
     top: -30px;
   }
+
 
   .form-input {
     font-size: 1.5rem;
@@ -834,4 +856,17 @@ input[type='password'] {
     line-height: 30px;
     min-height: 65px;
   }
+}
+
+.section-loading {
+  text-align: center;
+  margin-top: -10%;
+}
+
+.loadding-block {
+  width: 100vw;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center 
 }

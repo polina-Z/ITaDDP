@@ -1,0 +1,56 @@
+name: Deploy to Heroku
+on:
+  push:
+    branches:
+      - feature/js
+
+jobs:
+  check:
+    name: Lint and Check JS
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Install dependencies(eslint)
+        run: npm ci
+
+      - name: Run Checks
+        run: npx eslint frontend/static/js/** --ext .js -c .eslintrc.json
+
+  build:
+    needs: check
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run build --if-present
+
+  deploy:
+      needs: build
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - uses: akhileshns/heroku-deploy@v3.12.12
+          with:
+            heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+            heroku_app_name: "lab-clothing-store-app"
+            heroku_email: "polina.zorko@mail.ru"
+            branch: "feature/js"
+            remote_branch: "master"
