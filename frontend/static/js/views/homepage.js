@@ -1,33 +1,31 @@
-import AbstractView from "./abstractview.js";
-import { fetchCollection } from "../firebase/firebase.utils.js";
-
+import AbstractView from './abstractview.js'
+import { fetchCollection } from '../firebase/firebase.utils.js'
 
 export default class HomePage extends AbstractView {
-    constructor(params) {
-        super(params);
-        this.state = {};
+  constructor (params) {
+    super(params)
+    this.state = {}
+  };
+
+  async addHandlers () {
+  };
+
+  async getHtml () {
+    if (localStorage.getItem('homepage-collection') === null || localStorage.getItem('homepage-collection') === 'null') {
+      await fetchCollection('homepage-collection')
     };
 
-    async addHandlers() {
-    };
-
-    async getHtml() {
-        if (localStorage.getItem("homepage-collection") === null || localStorage.getItem("homepage-collection") === "null")
-        {
-            await fetchCollection("homepage-collection");
-        };
-
-        let innerHTML = `
+    let innerHTML = `
             <div class="homepage">
                 <div class="directory-menu">
-        `;
+        `
 
-        this.state = JSON.parse(localStorage.getItem("homepage-collection"));
-        if (Object.keys(this.state).length != 0) {
-            for (let key in this.state) {
-                const element = this.state[key];
+    this.state = JSON.parse(localStorage.getItem('homepage-collection'))
+    if (Object.keys(this.state).length !== 0) {
+      for (const key in this.state) {
+        const element = this.state[key]
 
-                innerHTML += `
+        innerHTML += `
                     <div class="menu-item ${element.size}">
                         <div class="background-image" style="background-image: url(${element.imageUrl});"></div>
                         <a href="${element.linkUrl}" data-link>
@@ -37,23 +35,21 @@ export default class HomePage extends AbstractView {
                             </div>
                         </a>
                     </div>
-                `;
-            };
+                `
+      };
 
-            innerHTML += `
+      innerHTML += `
                 </div>
                     </div>
-            `;
-            
-            return innerHTML;
-        };
-        
-        return `
+            `
+      return innerHTML
+    };
+    return `
             <div class="loadding-block">
                 <h2 class="section-loading">
                     Loading...
                 </h2>
             </div>
-        `;
-    };
-};
+        `
+  };
+}

@@ -1,38 +1,37 @@
-import { firestore } from "./firebase.init.js";
+import { firestore } from './firebase.init.js'
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
-  if (!userAuth) return;
+  if (!userAuth) return
 
-  const userRef = firestore.doc(`users/${userAuth.uid}`);
+  const userRef = firestore.doc(`users/${userAuth.uid}`)
 
-  const snapShot = await userRef.get();
+  const snapShot = await userRef.get()
 
   if (!snapShot.exists) {
-    const { displayName, email } = userAuth;
-    const createdAt = new Date();
+    const { displayName, email } = userAuth
+    const createdAt = new Date()
     await userRef.set({
       displayName,
       email,
       createdAt,
-      ...additionalData,
-    });
+      ...additionalData
+    })
   };
-  return userRef;
-};
-
+  return userRef
+}
 
 export const fetchCollection = async (collectionName) => {
-  let state = {};
-  let data = "";
+  const state = {}
+  let data = ''
   await firestore.collection(collectionName).get().then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-          data = doc.data();
-          state[data.title] = data;
-      });
-      localStorage.setItem(collectionName, JSON.stringify(state));
+    querySnapshot.forEach((doc) => {
+      data = doc.data()
+      state[data.title] = data
+    })
+    localStorage.setItem(collectionName, JSON.stringify(state))
   }).catch(
-      (error) => {
-          console.log(error);
-      }
-  );
-};
+    (error) => {
+      console.log(error)
+    }
+  )
+}

@@ -1,11 +1,11 @@
 export default class AbstractView {
-    constructor(params) {
-        this.params = params;
-    };
-    
-    async addHandlers() {};
+  constructor (params) {
+    this.params = params
+  };
 
-    async getHtml() {
-        return "";
-    };
-};
+  async addHandlers () {};
+
+  async getHtml () {
+    return ''
+  };
+}
